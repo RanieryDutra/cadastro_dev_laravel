@@ -52,7 +52,7 @@
                                  {{$desenvolvedor->techs7 == 7 ? ",Java" : ""}}
                             </td>
                             <td><a href="{{ route('site.editar', $desenvolvedor->id) }}">Editar</a></td>
-                            <td><a href="">Excluir</a></td>
+                            <td><a href="{{ route('site.excluir', $desenvolvedor->id) }}">Excluir</a></td>
                         </tr>
                     @endforeach
                 </tbody>

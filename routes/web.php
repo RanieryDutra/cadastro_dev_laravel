@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PrincipalController@principal')->name('site.home');
 Route::get('/editar{id}', 'PrincipalController@editar')->name('site.editar');
+Route::get('/excluir{id}', 'PrincipalController@excluir')->name('site.excluir');
 
 Route::get('/cadastro', 'CadastroController@cadastro')->name('site.cadastro');
 Route::post('/cadastro', 'CadastroController@salvar')->name('site.cadastro');

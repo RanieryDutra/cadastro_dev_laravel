@@ -28,4 +28,13 @@ class PrincipalController extends Controller
 
         return view('cadastro', ['dev' => $dev]);
     }
+
+    public function excluir($id)
+    {
+        CadastroDev::find($id)->delete();
+
+        $desenvolvedores = CadastroDev::get();
+
+        return view('home', ['desenvolvedores' => $desenvolvedores]);
+    }
 }
