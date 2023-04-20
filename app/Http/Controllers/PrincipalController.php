@@ -37,4 +37,9 @@ class PrincipalController extends Controller
 
         return view('home', ['desenvolvedores' => $desenvolvedores]);
     }
+
+    public function pesquisar(Request $request)
+    {
+        echo 'Cheguei aqui';
+    }
 }

@@ -15,10 +15,19 @@
         <a href="{{ route('site.home') }}">Home</a>
     </nav>
 
-    <div>
+    <div class="titulo-site">
         <h1 id="titulo">Bem vindo ao Cadastro Dev</h1>
     </div>
-    <div class="informacao-pagina">
+
+    <div class="campo">
+        <form method="post" action={{ route('site.pesquisar') }} >
+            <label for="pesquisa"><strong>Pesquisa</strong></label>
+            <input type="text" name="pesquisa" id="pesquisa" >
+            <button class="botao" type="submit" onsubmit="">Pesquisar</button>
+        </form>
+    </div>
+
+    <div id="informacao-pagina">
         <div class="div-table">
             <table border="1" width="100%">
                 <thead>
