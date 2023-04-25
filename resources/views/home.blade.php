@@ -21,6 +21,7 @@
 
     <div class="campo">
         <form method="post" action={{ route('site.pesquisar') }} >
+            @csrf
             <label for="pesquisa"><strong>Pesquisa</strong></label>
             <input type="text" name="pesquisa" id="pesquisa" >
             <button class="botao" type="submit" onsubmit="">Pesquisar</button>

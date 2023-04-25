@@ -40,6 +40,10 @@ class PrincipalController extends Controller
 
     public function pesquisar(Request $request)
     {
-        echo 'Cheguei aqui';
+        $desenvolvedores = CadastroDev::where('nome', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('tipoDev', 'like', '%' . $request->input('pesquisa') . '%')
+            ->get();
+
+        return view('home', ['desenvolvedores' => $desenvolvedores]);
     }
 }
