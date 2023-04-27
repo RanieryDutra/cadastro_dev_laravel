@@ -60,7 +60,7 @@ input {
 .campo {
     margin-bottom: 1em;
     display: inline-block;
-    margin: 1% 0 1% 38%;
+    margin: 1% 0 1% 30%;
 }
 
 /* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/

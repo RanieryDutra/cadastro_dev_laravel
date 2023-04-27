@@ -49,17 +49,14 @@
                             <td>{{ $desenvolvedor->id }}</td>
                             <td>{{ $desenvolvedor->nome }}</td>
                             <td>{{ $desenvolvedor->tipoDev }}</td>
-                            <td>{{$desenvolvedor->senioridade == 1 ? "Junior" : ""}}
-                                {{$desenvolvedor->senioridade == 2 ? "Pleno" : ""}}
-                                {{$desenvolvedor->senioridade == 3 ? "Senior" : ""}}
-                            </td>
-                            <td> {{$desenvolvedor->techs1 == 1 ? "HTML" : ""}}
-                                 {{$desenvolvedor->techs2 == 2 ? ",CSS" : ""}}
-                                 {{$desenvolvedor->techs3 == 3 ? ",Javascript" : ""}}
-                                 {{$desenvolvedor->techs4 == 4 ? ",PHP" : ""}}
-                                 {{$desenvolvedor->techs5 == 5 ? ",C#" : ""}}
-                                 {{$desenvolvedor->techs6 == 6 ? ",Python" : ""}}
-                                 {{$desenvolvedor->techs7 == 7 ? ",Java" : ""}}
+                            <td>{{$desenvolvedor->senioridade}}</td>
+                            <td> {{$desenvolvedor->techs1}}
+                                 {{$desenvolvedor->techs2}}
+                                 {{$desenvolvedor->techs3}}
+                                 {{$desenvolvedor->techs4}}
+                                 {{$desenvolvedor->techs5}}
+                                 {{$desenvolvedor->techs6}}
+                                 {{$desenvolvedor->techs7}}
                             </td>
                             <td><a href="{{ route('site.editar', $desenvolvedor->id) }}">Editar</a></td>
                             <td><a href="{{ route('site.excluir', $desenvolvedor->id) }}">Excluir</a></td>
@@ -71,3 +68,20 @@
     </div>
 </body>
 </html>
+
+
+<!-- 
+
+    {{$desenvolvedor->senioridade == 1 ? "Junior" : ""}}
+    {{$desenvolvedor->senioridade == 2 ? "Pleno" : ""}}
+    {{$desenvolvedor->senioridade == 3 ? "Senior" : ""}}
+
+
+    {{$desenvolvedor->techs1 == 1 ? "HTML" : ""}}
+    {{$desenvolvedor->techs2 == 2 ? ",CSS" : ""}}
+    {{$desenvolvedor->techs3 == 3 ? ",Javascript" : ""}}
+    {{$desenvolvedor->techs4 == 4 ? ",PHP" : ""}}
+    {{$desenvolvedor->techs5 == 5 ? ",C#" : ""}}
+    {{$desenvolvedor->techs6 == 6 ? ",Python" : ""}}
+    {{$desenvolvedor->techs7 == 7 ? ",Java" : ""}}
+-->

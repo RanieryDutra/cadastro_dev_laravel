@@ -64,9 +64,9 @@
                 <label for="senioridade" ><strong>Senioridade</strong></label>
                 <select id="senioridade" name="senioridade" required>
                   <option selected name="senioridade" value="option">Selecione</option>
-                  <option name="option" value="{{ $dev->senioridade == 1 ?? old('senioridade') == 1 ? 1 : 1 }}" {{ $dev->senioridade == 1 ?? old('senioridade') == 1 ? "selected" : "" }}>Júnior</option>
-                  <option name="option" value="{{ $dev->senioridade == 2 ?? old('senioridade') == 2 ? 2 : 2 }}" {{ $dev->senioridade == 2 ?? old('senioridade') == 2 ? "selected" : "" }}>Pleno</option>
-                  <option name="option" value="{{ $dev->senioridade == 3 ?? old('senioridade') == 3 ? 3 : 3 }}" {{ $dev->senioridade == 3 ?? old('senioridade') == 3 ? "selected" : "" }}>Sênior</option>
+                  <option name="option" value="{{ $dev->senioridade == "Júnior" ?? old('senioridade') == "Júnior" ? "Júnior" : "Júnior" }}" {{ $dev->senioridade == "Júnior" ?? old('senioridade') == "Júnior" ? "selected" : "" }}>Júnior</option>
+                  <option name="option" value="{{ $dev->senioridade == "Pleno" ?? old('senioridade') == "Pleno" ? "Pleno" : "Pleno" }}" {{ $dev->senioridade == "Pleno" ?? old('senioridade') == "Pleno" ? "selected" : "" }}>Pleno</option>
+                  <option name="option" value="{{ $dev->senioridade == "Sênior" ?? old('senioridade') == "Sênior" ? "Sênior" : "Sênior" }}" {{ $dev->senioridade == "Sênior" ?? old('senioridade') == "Sênior" ? "selected" : "" }}>Sênior</option>
                 </select>
             </div>
 
@@ -74,19 +74,19 @@
                 <!-- Campo de tecnologias para escolha de 1 ou mais opções para marcar (checkbox) e css de classe "campo" -->
                 <div id="check">
                     <label><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
-                    <input type="checkbox" id="tecnologia1" name="techs1" value="{{ $dev->techs1 == 1 ?? old('tecnologia1') == 1 ? 1 : 1 }}" {{ $dev->techs1 == 1 ?? old('tecnologia1') == 1 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia1" name="techs1" value="{{ $dev->techs1 == "HTML" ?? old('tecnologia1') == "HTML" ? "HTML" : "HTML" }}" {{ $dev->techs1 == "HTML" ?? old('tecnologia1') == "HTML" ? 'checked' : '' }}>
                     <label for="tecnologia1"> HTML</label>
-                    <input type="checkbox" id="tecnologia2" name="techs2" value="{{ $dev->techs2 == 2 ?? old('tecnologia2') == 2 ? 2 : 2 }}" {{ $dev->techs2 == 2 ?? old('tecnologia2') == 2 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia2" name="techs2" value="{{ $dev->techs2 == "CSS" ?? old('tecnologia2') == "CSS" ? "CSS" : "CSS" }}" {{ $dev->techs2 == "CSS" ?? old('tecnologia2') == "CSS" ? 'checked' : '' }}>
                     <label for="tecnologia2"> CSS</label>
-                    <input type="checkbox" id="tecnologia3" name="techs3" value="{{ $dev->techs3 == 3 ?? old('tecnologia3') == 3 ? 3 : 3 }}" {{ $dev->techs3 == 3 ?? old('tecnologia3') == 3 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia3" name="techs3" value="{{ $dev->techs3 == "JavaScript" ?? old('tecnologia3') == "JavaScript" ? "JavaScript" : "JavaScript" }}" {{ $dev->techs3 == "JavaScript" ?? old('tecnologia3') == "JavaScript" ? 'checked' : '' }}>
                     <label for="tecnologia3"> JavaScript</label>
-                    <input type="checkbox" id="tecnologia4" name="techs4" value="{{ $dev->techs4 == 4 ?? old('tecnologia4') == 4 ? 4 : 4 }}" {{ $dev->techs4 == 4 ?? old('tecnologia4') == 4 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia4" name="techs4" value="{{ $dev->techs4 == "PHP" ?? old('tecnologia4') == "PHP" ? "PHP" : "PHP" }}" {{ $dev->techs4 == "PHP" ?? old('tecnologia4') == "PHP" ? 'checked' : '' }}>
                     <label for="tecnologia4"> PHP</label>
-                    <input type="checkbox" id="tecnologia5" name="techs5" value="{{ $dev->techs5 == 5 ?? old('tecnologia5') == 5 ? 5 : 5 }}" {{ $dev->techs5 == 5 ?? old('tecnologia5') == 5 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia5" name="techs5" value="{{ $dev->techs5 == "C#" ?? old('tecnologia5') == "C#" ? "C#" : "C#" }}" {{ $dev->techs5 == "C#" ?? old('tecnologia5') == "C#" ? 'checked' : '' }}>
                     <label for="tecnologia5"> C#</label>
-                    <input type="checkbox" id="tecnologia6" name="techs6" value="{{ $dev->techs6 == 6 ?? old('tecnologia6') == 6 ? 6 : 6 }}" {{ $dev->techs6 == 6 ?? old('tecnologia6') == 6 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia6" name="techs6" value="{{ $dev->techs6 == "Python" ?? old('tecnologia6') == "Python" ? "Python" : "Python" }}" {{ $dev->techs6 == "Python" ?? old('tecnologia6') == "Python" ? 'checked' : '' }}>
                     <label for="tecnologia6"> Python</label>
-                    <input type="checkbox" id="tecnologia7" name="techs7" value="{{ $dev->techs7 == 7 ?? old('tecnologia7') == 7 ? 7 : 7 }}" {{ $dev->techs7 == 7 ?? old('tecnologia7') == 7 ? 'checked' : '' }}>
+                    <input type="checkbox" id="tecnologia7" name="techs7" value="{{ $dev->techs7 == "Java" ?? old('tecnologia7') == "Java" ? "Java" : "Java" }}" {{ $dev->techs7 == "Java" ?? old('tecnologia7') == "Java" ? 'checked' : '' }}>
                     <label for="tecnologia7"> Java</label>
                 </div>
             </fieldset>
