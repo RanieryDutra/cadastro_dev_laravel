@@ -42,7 +42,26 @@ class PrincipalController extends Controller
     {
         $desenvolvedores = CadastroDev::where('nome', 'like', '%' . $request->input('pesquisa') . '%')
             ->orwhere('tipoDev', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('senioridade', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs1', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs2', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs3', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs4', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs5', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs6', 'like', '%' . $request->input('pesquisa') . '%')
+            ->orwhere('techs7', 'like', '%' . $request->input('pesquisa') . '%')
             ->get();
+
+        //dd($desenvolvedores->all());
+
+        if ($desenvolvedores->all() == []) {
+            /*$X = 'Verdadeiro';
+            dd($X);*/
+            $desenvolvedores = CadastroDev::get();
+        } /*else {
+            $X = 'Falso';
+            dd($X);
+        }*/
 
         return view('home', ['desenvolvedores' => $desenvolvedores]);
     }
