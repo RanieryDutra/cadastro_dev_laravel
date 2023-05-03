@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,12 +100,18 @@
             <!--!= '' ? old('xp') : "Preencha aqui sua mensagem"-->
             <!-- Botão para enviar o formulário -->
             <button class="botao" type="submit" onsubmit="">Concluído</button>
-
+            <button class="botao2" type="button" id="endereco">Cadastrar Endereço</button>
             <!--<div style="position:absolute; top:0px; left:0px; width:100%;" >
                 <prev>
                     checked="{ $dev->tipoDev = "fullstack" ?? old('tipoDev') = "fullstack" ? "checked" : ""}}"
                 </prev>
             </div>-->
+
+            <script>
+                document.getElementById('endereco').addEventListener('click', function() {
+                    window.location.href = "endereco";
+                })
+            </script>
     </form>
     </div>
     </div>
