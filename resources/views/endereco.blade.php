@@ -28,15 +28,15 @@
     <form  action={{ route('site.cadastro') }} method="post">
         <input type="hidden" name="id" value="" >
         @csrf
-        <fieldset class="grupo">
+        <fieldset class="grupo endereco">
         <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
-        <div class="campo">
-            <label for="nome"><strong>Nome</strong></label>
-            <input type="text" name="nome" id="nome" value="" required>
+        <div class="campo campoLogradouro">
+            <label for="logradouro"><strong>Logradouro</strong></label>
+            <input type="text" name="logradouro" id="logradouro" value="" required>
         </div>
 
         <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
-        <div class="campo">
+        <div class="campo campoLogradouro">
             <label for="sobrenome"><strong>Sobrenome</strong></label>
             <input type="text" name="sobrenome" id="sobrenome" value="" required>
         </div>
@@ -95,23 +95,19 @@
             <div class="campo">
                 <br>
                 <label for="experiencia"><strong>Conte um pouco mais da sua experiência: </strong></label>
-                <textarea rows="6" style="width: 26em" id="experiencia" name="xp"> {{ old('xp') ?? "Preencha aqui sua mensagem" }} </textarea>
+                <textarea rows="6" style="width: 26em" id="experiencia" name="xp" placeholder="Preencha aqui sua mensagem"></textarea>
             </div>
             <!--!= '' ? old('xp') : "Preencha aqui sua mensagem"-->
             <!-- Botão para enviar o formulário -->
-            <button class="botao" type="submit" onsubmit="">Concluído</button>
-            <button class="botao2" type="button" onclick="endereco()">Cadastrar Endereço</button>
+            <button class="botao" type="submit" onsubmit="">Cadastrar endereço</button>
             <!--<div style="position:absolute; top:0px; left:0px; width:100%;" >
                 <prev>
                     checked="{ $dev->tipoDev = "fullstack" ?? old('tipoDev') = "fullstack" ? "checked" : ""}}"
                 </prev>
+
+                old('xp') ?? "Preencha aqui sua mensagem" 
             </div>-->
 
-            <script>
-                function endereco() {
-                    alert('Funcionou xD')
-                }
-            </script>
     </form>
     </div>
     </div>
