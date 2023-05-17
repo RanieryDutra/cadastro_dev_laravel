@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
         <nav>
         <div class="logo">Logo</div>
         <a href="{{ route('site.contato') }}">Contato</a>
@@ -25,90 +28,120 @@
         </div>
 
     <div name="div-form">
-    <form  action={{ route('site.cadastro') }} method="post">
-        <input type="hidden" name="id" value="" >
+    <form  action={{ route('site.endereco') }} method="post">
+        
         @csrf
+        
+        
+        <div class="campo campoCep">
+            <label for="cep"><strong>CEP</strong></label>
+            <input type="text" name="cep" id="cep" class="cep" required>
+        </div>
+        
+        
+        <div class="campo campoLogradouro">
         <fieldset class="grupo endereco">
-        <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
-        <div class="campo campoLogradouro">
             <label for="logradouro"><strong>Logradouro</strong></label>
-            <input type="text" name="logradouro" id="logradouro" value="" required>
+            <input type="text" name="logradouro" id="logradouro"  required>
         </div>
 
-        <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
-        <div class="campo campoLogradouro">
-            <label for="sobrenome"><strong>Sobrenome</strong></label>
-            <input type="text" name="sobrenome" id="sobrenome" value="" required>
-        </div>
-    </fieldset> 
-
-        <div class="campo">
-            <label for="email"><strong>E-mail</strong></label>
-            <input type="text" name="email" id="email" value="" required>
+        <div class="campo campoNumero">
+            <label for="numero"><strong>Numero</strong></label>
+            <input type="text" name="numero" id="numero"  required>
         </div>
 
-        <div class="campo">
-            <label><strong> De qual lado da aplicação você desenvolve </strong></label>
-            <label>
-                <input type="radio" name="tipoDev" value="" >Front-end
-            </label>
-            <label>
-                <input type="radio" name="tipoDev" value="" >Back-end
-            </label>
-            <label>
-                <input type="radio" name="tipoDev" value="" >Full-Stack
-            </label>
+        <div class="campo campoComplemento">
+            <label for="complemento"><strong>Complemento</strong></label>
+            <input type="text" name="complemento" id="complemento"  required>
         </div>
 
         <div class="campo">
-                <label for="senioridade" ><strong>Senioridade</strong></label>
-                <select id="senioridade" name="senioridade" required>
-                  <option selected name="senioridade" value="option">Selecione</option>
-                  <option name="option" value="" >Júnior</option>
-                  <option name="option" value="" >Pleno</option>
-                  <option name="option" value="" >Sênior</option>
+            <label for="bairro"><strong>Bairro</strong></label>
+            <input type="text" name="bairro" id="bairro"  required>
+        </div>
+
+        </fieldset>
+
+        <div class="campo campoUF">
+                <label for="uf" ><strong>Estado</strong></label>
+                <select id="uf" name="uf" id="uf" required>
+                    <option selected name="uf" value="option">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
                 </select>
             </div>
 
-            <fieldset class="grupo">
-                <!-- Campo de tecnologias para escolha de 1 ou mais opções para marcar (checkbox) e css de classe "campo" -->
-                <div id="check">
-                    <label><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
-                    <input type="checkbox" id="tecnologia1" name="techs1" value="" >
-                    <label for="tecnologia1"> HTML</label>
-                    <input type="checkbox" id="tecnologia2" name="techs2" value="" >
-                    <label for="tecnologia2"> CSS</label>
-                    <input type="checkbox" id="tecnologia3" name="techs3" value="" >
-                    <label for="tecnologia3"> JavaScript</label>
-                    <input type="checkbox" id="tecnologia4" name="techs4" value="" >
-                    <label for="tecnologia4"> PHP</label>
-                    <input type="checkbox" id="tecnologia5" name="techs5" value="" >
-                    <label for="tecnologia5"> C#</label>
-                    <input type="checkbox" id="tecnologia6" name="techs6" value="" >
-                    <label for="tecnologia6"> Python</label>
-                    <input type="checkbox" id="tecnologia7" name="techs7" value="" >
-                    <label for="tecnologia7"> Java</label>
-                </div>
-            </fieldset>
-
-            <!-- Caixa de texto -->
-            <div class="campo">
-                <br>
-                <label for="experiencia"><strong>Conte um pouco mais da sua experiência: </strong></label>
-                <textarea rows="6" style="width: 26em" id="experiencia" name="xp" placeholder="Preencha aqui sua mensagem"></textarea>
-            </div>
-            <!--!= '' ? old('xp') : "Preencha aqui sua mensagem"-->
-            <!-- Botão para enviar o formulário -->
-            <button class="botao" type="submit" onsubmit="">Cadastrar endereço</button>
-            <!--<div style="position:absolute; top:0px; left:0px; width:100%;" >
-                <prev>
-                    checked="{ $dev->tipoDev = "fullstack" ?? old('tipoDev') = "fullstack" ? "checked" : ""}}"
-                </prev>
-
-                old('xp') ?? "Preencha aqui sua mensagem" 
-            </div>-->
+            <button class="botao" type="submit" onsubmit="">Buscar endereço</button>
 
     </form>
+
+    <script>
+
+        //<input type="hidden" name="id" value="" >
+		$("#cep").focusout(function(){
+            //console.log($(this).val());
+            var cep = $(this).val();
+			//Início do Comando AJAXa
+			$.ajax({
+				//O campo URL diz o caminho de onde virá os dados
+				//É importante concatenar o valor digitado no CEP
+				//url: '/endereco/' + $(this).val(),
+                url: "{{ route('site.busca') }}",
+				//Aqui você deve preencher o tipo de dados que será lido,
+				//no caso, estamos lendo JSON.
+				type: 'GET',
+                dataType: 'json',
+                data:{cep:cep},
+				//SUCESS é referente a função que será executada caso
+				//ele consiga ler a fonte de dados com sucesso.
+				//O parâmetro dentro da função se refere ao nome da variável
+				//que você vai dar para ler esse objeto.
+				success: function(resposta){
+					//Agora basta definir os valores que você deseja preencher
+					//automaticamente nos campos acima.
+                    /*alert('Sucesso');
+                    console.log(resposta);*/
+					$("#logradouro").val(resposta.logradouro);
+					$("#complemento").val(resposta.complemento);
+					$("#bairro").val(resposta.bairro);
+					$("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+					//Vamos incluir para que o Número seja focado automaticamente
+					//melhorando a experiência do usuário
+					$("#numero").focus();
+				},
+                error: function(xhr) {
+                    console.log(xhr);
+                    alert('Cep incorreto ou não encontrado');
+                }
+			});
+		});
+	</script>
     </div>
     </div>
 </body>

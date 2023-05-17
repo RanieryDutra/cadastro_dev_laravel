@@ -2,19 +2,20 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 .formu {
-    margin: 4% 0 0 33%;
+    margin: 4% 0 0 36%;
     display: inline-table;
-    padding-left: 100px;
+    padding-left: 10px;
 }
 
 /* Elementos com o ID "titulo" */
 #titulo {
     font-family: sans-serif;
     color: #380B61;
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 /* Elementos com o ID "subtitulo" */
@@ -173,13 +174,32 @@ nav a:hover {
 }
 
 .campoLogradouro {
-    display: flex;
+    width: 100%;
     flex-direction: column;
-    justify-content: center;
 }
 
 .endereco {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.campoLogradouro input {
+    width: 98%;
+}
+
+.campoNumero {
+    width: 100%;
+}
+
+.campoNumero input {
+    width: 20%;
+}
+
+.campoComplemento {
+    width: 100%;
+}
+
+.campoComplemento input {
+    width: 98%;
 }

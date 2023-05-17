@@ -24,3 +24,4 @@ Route::post('/cadastro', 'CadastroController@salvar')->name('site.cadastro');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 
 Route::get('/endereco', 'EnderecoController@index')->name('site.endereco');
+Route::get('/endereco/buscar/{cep?}', 'EnderecoController@buscaCep')->name('site.busca');
